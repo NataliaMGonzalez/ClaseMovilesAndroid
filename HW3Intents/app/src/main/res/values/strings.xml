@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">HW3Intents</string>
+    <string name="say_hello">Say Hello</string>
+    <string name="count">Count</string>
+    <string name="hello">Hello</string>
+    <string name="newCounterValue">New Counter Value</string>
+    <string name="value">value</string>
 </resources>
