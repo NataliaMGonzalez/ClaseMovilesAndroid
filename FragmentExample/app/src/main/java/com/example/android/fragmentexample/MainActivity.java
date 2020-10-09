@@ -23,8 +23,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SimpleFragment.CommListener {
 
     private Button mButton;
     private boolean isFragmentDisplayed = false;
@@ -89,4 +90,8 @@ public class MainActivity extends AppCompatActivity {
         isFragmentDisplayed = false;
     }
 
+    @Override
+    public void onRadioButtonChoice(int choice) {
+        Toast.makeText(this, "Choice is " + choice, Toast.LENGTH_SHORT).show();
+    }
 }

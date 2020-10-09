@@ -1,5 +1,6 @@
 package com.example.android.fragmentexample;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -14,9 +15,34 @@ import android.widget.TextView;
  * create an instance of this fragment.
  */
 public class SimpleFragment extends Fragment {
+    // Reference to interface
+    CommListener mListener;
+
     // yes at index 0, no at index 1
-    private static final int yes = 0;
-    private static final int no  = 1;
+    private static final int YES = 0;
+    private static final int NO  = 1;
+    private static int NONE = 2;
+
+    public int mRadioButtonChoice = NONE;
+
+    // Create interface
+    interface CommListener{
+        void onRadioButtonChoice(int choice);
+
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if(context instanceof CommListener){
+            mListener = (CommListener)context;
+        }
+        else{
+            throw new ClassCastException(context.toString() + " You nee to implement interface CommListener");
+        }
+    }
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,15 +93,21 @@ public class SimpleFragment extends Fragment {
                 TextView txtView = rootView.findViewById(R.id.fragmentHeader);
 
                 switch (index){
-                    case yes: //user chose yes
+                    case YES: //user chose yes
                         txtView.setText(R.string.yes_message);
+                        mRadioButtonChoice = YES;
+                        mListener.onRadioButtonChoice(YES);
                         break;
 
-                    case no:
+                    case NO:
                         txtView.setText(R.string.no_message);
+                        mRadioButtonChoice = NO;
+                        mListener.onRadioButtonChoice(NO);
                         break;
 
                     default:
+                        mRadioButtonChoice = NONE;
+                        mListener.onRadioButtonChoice(NONE);
                         break;
                 }
 
