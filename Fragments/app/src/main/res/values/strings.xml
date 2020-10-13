@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="selecciona_una_encuesta">Selecciona una encuesta</string>
+    <string name="encuesta_a_tecnologia">ENCUESTA A - TECNOLOGIA</string>
+    <string name="encuesta_b_deportes">ENCUESTA B - DEPORTES</string>
+    <string name="text_true">True</string>
+    <string name="text_false">False</string>
+    <string name="prev"><![CDATA[<< PREV]]></string>
+    <string name="next"><![CDATA[NEXT >>]]></string>
+    <string name="check_answer">CHECK ANSWER</string>
+    <string name="deportes_question_1">En futbol profesional los partidos regulares duran 90 min</string>
+    <string name="deportes_question_2">En el futbol, el que meta mas canastas gana.</string>
+    <string name="tecnologia_question_1">USB significa "Unified Serial Bus."</string>
+    <string name="tecnologia_question_2">Para imprimir pantalla en Windows, el usuario debe presionar el boton "Prt Sc".</string>
+</resources>
